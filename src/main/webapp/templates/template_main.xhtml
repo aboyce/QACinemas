@@ -5,8 +5,10 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
     <h:head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
         <title>QA Cinemas - <ui:insert name="title" /></title>
+        <link rel="stylesheet" type="text/css" href="libraries/bootstrap/css/bootstrap.min.css"/>
+        <!-- To enable pages using this template to insert CSS. -->
         <ui:insert name="custom-css" />
     </h:head>
 
@@ -17,6 +19,9 @@
         <ui:insert name="main-content" />
 
         <!-- Javascript -->
+        <script type="text/javaScript" src="libraries/jQuery/js/jquery.min.js"></script>
+        <script type="text/javaScript" src="libraries/bootstrap/js/bootstrap.min.js"></script>
+        <!-- To enable pages using this template to insert JS. -->
         <ui:insert name="custom-scripts" />
 
         </body>
