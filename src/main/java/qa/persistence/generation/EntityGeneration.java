@@ -1,7 +1,6 @@
 package qa.persistence.generation;
 
-import qa.persistence.entities.Film;
-import qa.persistence.entities.User;
+import qa.persistence.entities.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -49,5 +48,20 @@ public class EntityGeneration {
         films.add(new Film(13, "Toy Story 3", "Lee Unkrich", "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_UY268_CR3,0,182,268_AL_.jpg", 123, Year.parse("2010")));
         films.add(new Film(14, "Die Hard", "John McTiernan", "https://images-na.ssl-images-amazon.com/images/M/MV5BMzNmY2IwYzAtNDQ1NC00MmI4LThkOTgtZmVhYmExOTVhMWRkXkEyXkFqcGdeQXVyMTk5NDA3Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg", 131, Year.parse("1988")));
         return films;
+    }
+
+    public static List<Rating> getSampleRatings() {
+        List<Rating> ratings = new ArrayList<Rating>();
+        return ratings;
+    }
+
+    public static List<Viewing> getSampleViewings() {
+        List<Viewing> viewings = new ArrayList<Viewing>();
+        return viewings;
+    }
+
+    public static List<Seat> getSampleSeats() {
+        List<Seat> seats = new ArrayList<Seat>();
+        return seats;
     }
 }
