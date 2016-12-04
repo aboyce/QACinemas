@@ -8,15 +8,17 @@ public class Film {
     private Integer id;
     private String title;
     private String director;
+    private String imageUrl;
     private int duration;
     private Year releaseYear;
 
     public Film() {}
 
-    public Film(Integer id, String title, String director, int duration, Year releaseYear) {
+    public Film(Integer id, String title, String director, String imageUrl, int duration, Year releaseYear) {
         this.id = id;
         this.title = title;
         this.director = director;
+        this.imageUrl = imageUrl;
         this.duration = duration;
         this.releaseYear = releaseYear;
     }
@@ -31,6 +33,10 @@ public class Film {
 
     public String getDirector() {
         return director;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public int getDuration() {
