@@ -1,4 +1,16 @@
-<div>
-    <h1>#{film.director}</h1>
-    <h1>#{film.releaseYear}</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3>#{film.title}</h3>
+        <div style="float: right"><h3>2020</h3></div>
+    </div>
+    <div class="panel-body">
+        <p><strong>Director:</strong> #{film.director}</p>
+        <p><strong>Released:</strong> #{film.releaseYear}</p>
+        <p><strong>Duration:</strong> #{film.duration} mins</p>
+        <img src="#{film.imageUrl}"/>
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-success">Add to <i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+        <button class="btn btn-warning">Add to Watchlist</button>
+    </div>
 </div>

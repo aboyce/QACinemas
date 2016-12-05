@@ -1,7 +1,6 @@
 package qa.persistence.entities;
 
 import java.time.Year;
-import java.util.List;
 
 public class Film {
 
