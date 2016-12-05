@@ -23,6 +23,20 @@
             </div>
         </div>
 
+        <div class="container">
+            <ui:repeat var="currentFilm" value="#{films.getFilms()}">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-10">
+                        <ui:insert>
+                            <ui:include src="templates/template_film.html">
+                                <ui:param name="film" value="#{currentFilm}"/>
+                            </ui:include>
+                        </ui:insert>
+                    </div>
+                </div>
+            </ui:repeat>
+        </div>
+
     </ui:define>
 
     <ui:define name="custom-scripts">
