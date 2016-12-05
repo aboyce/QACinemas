@@ -24,9 +24,10 @@ public class EntityGeneration {
 
     public static List<User> getSampleUsers() {
         List<User> users = new ArrayList<User>();
-        users.add(new User(0, "John", "Smith", "john_smith", "test", "j.smith@email.com", getDateOfBirth("05/08/1964")));
+        users.add(new User(0, "Admin", "Test", "admin", "test", "a.test@email.com", getDateOfBirth("01/01/2000")));
         users.add(new User(1, "Terry", "Grange", "terry_grange", "test", "t.grange@email.com", getDateOfBirth("25/11/1969")));
         users.add(new User(2, "Fran", "Levels", "fran_levels", "test", "f.levels@email.com", getDateOfBirth("13/04/1973")));
+        users.add(new User(3, "John", "Smith", "john_smith", "test", "j.smith@email.com", getDateOfBirth("05/08/1964")));
         return users;
     }
 

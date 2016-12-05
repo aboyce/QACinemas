@@ -12,7 +12,8 @@ public class User {
     private String email;
     private Date dateOfBirth;
 
-    public User() {}
+    public User() {
+    }
 
     public User(Integer id, String firstname, String lastname, String username, String passwordHash, String email, Date dateOfBirth) {
         this.id = id;

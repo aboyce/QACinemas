@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="templates/template_main.xhtml">
+
+    <ui:define name="custom-css">
+    </ui:define>
+
+    <ui:define name="title">Log In</ui:define>
+
+    <ui:define name="main-content">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <h:form>
+                        <h:panelGroup class="form-group" rendered="#{login.credentials.usernameError == null}">
+                            <label>Username:</label>
+                            <h:inputText type="text" class="form-control" value="#{login.credentials.username}"/>
+                        </h:panelGroup>
+                        <h:panelGroup class="form-group has-error" rendered="#{login.credentials.usernameError != null}">
+                            <label>Username:</label>
+                            <h:inputText type="text" class="form-control has-error" value="#{login.credentials.username}" aria-describedby="login_username_error"/>
+                            <span id="login_username_error" class="help-block">#{login.credentials.usernameError}</span>
+                        </h:panelGroup>
+
+                        <h:panelGroup class="form-group" rendered="#{login.credentials.passwordError == null}">
+                            <label>Password:</label>
+                            <h:inputSecret type="text" class="form-control" value="#{login.credentials.password}"/>
+                        </h:panelGroup>
+                        <h:panelGroup class="form-group has-error" rendered="#{login.credentials.passwordError != null}">
+                            <label>Password:</label>
+                            <h:inputSecret type="password" class="form-control" value="#{login.credentials.password}" aria-describedby="login_password_error"/>
+                            <span id="login_password_error" class="help-block">#{login.credentials.passwordError}</span>
+                        </h:panelGroup>
+
+                        <h:commandButton type="submit" styleClass="btn btn-success" value="Log In" action="#{login.login()}"/>
+                    </h:form>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <p>Don't have an account, you can register <a href="register.xhtml">here</a>!</p>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+    <ui:define name="custom-scripts">
+    </ui:define>
+
+</ui:composition>

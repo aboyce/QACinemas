@@ -29,4 +29,14 @@ public class UserRepositoryOffline implements UserRepository {
     public List<User> getUsers() {
         return db.getUsers();
     }
+
+    @Override
+    public User login(String username, String passwordHash) {
+        for (User user : db.getUsers()) {
+            if(user.getUsername().equals(username) && user.getPasswordHash().equals(passwordHash)){
+                return user;
+            }
+        }
+        return null;
+    }
 }

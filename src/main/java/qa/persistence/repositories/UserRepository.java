@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface UserRepository {
 
-    public User getUserById(Integer id);
-    public List<User> getUsers();
+    User getUserById(Integer id);
+    List<User> getUsers();
+
+    /* LOGIN FUNCTIONALITY */
+    User login(String username, String passwordHash);
 }
