@@ -1,6 +1,7 @@
 package qa.services;
 
 
+import qa.Helpers.HashingHelper;
 import qa.persistence.entities.User;
 import qa.persistence.repositories.UserRepository;
 import qa.persistence.webentities.LoginCredentials;
@@ -14,10 +15,7 @@ public class UserService {
     @Inject
     private UserRepository userRepository;
 
-    @Inject
-    private HashingService hashingService;
-
-    public LoginCredentials login(LoginCredentials credentials) {
+    public User login(LoginCredentials credentials) {
 
         if (credentials == null) {
             return null;
@@ -27,15 +25,15 @@ public class UserService {
             credentials.setUsernameError("Username Required");
             credentials.setPasswordError(null);
             credentials.setPassword("");
-            return credentials;
+            return null;
         } else if (credentials.getPassword() == null || credentials.getPassword().equals("")) {
             credentials.setUsernameError(null);
             credentials.setPasswordError("Password Required");
             credentials.setPassword("");
-            return credentials;
+            return null;
         }
 
-        credentials.setPasswordHash(hashingService.hashPassword(credentials.getPassword()));
+        credentials.setPasswordHash(HashingHelper.hashPassword(credentials.getPassword()));
         credentials.setPassword("");
 
         User user = userRepository.login(credentials.getUsername(), credentials.getPasswordHash());
@@ -44,10 +42,23 @@ public class UserService {
             credentials.setUsernameError("Could not find User, please check credentials");
             credentials.setPasswordError("Could not find User, please check credentials");
             credentials.setPassword("");
-            return credentials;
+            return null;
         }
 
-        credentials.setUser(user);
-        return credentials;
+        return user;
+    }
+
+    public User register(User user) {
+
+        if(user == null){
+            return null;
+        }
+
+
+        return user;
+    }
+
+    public boolean add(User user){
+        return false;
     }
 }

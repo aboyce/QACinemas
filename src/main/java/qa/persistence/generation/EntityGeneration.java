@@ -1,5 +1,6 @@
 package qa.persistence.generation;
 
+import qa.Helpers.DateHelper;
 import qa.persistence.entities.*;
 
 import java.text.ParseException;
@@ -11,23 +12,12 @@ import java.util.List;
 
 public class EntityGeneration {
 
-    private static final String DATE_FORMAT = "dd/MM/yyyy";
-
-    private static Date getDateOfBirth(String dateString){
-        if(dateString == null) { return null; }
-        try {
-            return new SimpleDateFormat(DATE_FORMAT).parse(dateString);
-        } catch (ParseException ex) {
-            return null;
-        }
-    }
-
     public static List<User> getSampleUsers() {
         List<User> users = new ArrayList<User>();
-        users.add(new User(0, "Admin", "Test", "admin", "test", "a.test@email.com", getDateOfBirth("01/01/2000")));
-        users.add(new User(1, "Terry", "Grange", "terry_grange", "test", "t.grange@email.com", getDateOfBirth("25/11/1969")));
-        users.add(new User(2, "Fran", "Levels", "fran_levels", "test", "f.levels@email.com", getDateOfBirth("13/04/1973")));
-        users.add(new User(3, "John", "Smith", "john_smith", "test", "j.smith@email.com", getDateOfBirth("05/08/1964")));
+        users.add(new User(0, "Admin", "Test", "admin", "test", "a.test@email.com", DateHelper.getDateOfBirth("01/01/2000")));
+        users.add(new User(1, "Terry", "Grange", "terry_grange", "test", "t.grange@email.com", DateHelper.getDateOfBirth("25/11/1969")));
+        users.add(new User(2, "Fran", "Levels", "fran_levels", "test", "f.levels@email.com", DateHelper.getDateOfBirth("13/04/1973")));
+        users.add(new User(3, "John", "Smith", "john_smith", "test", "j.smith@email.com", DateHelper.getDateOfBirth("05/08/1964")));
         return users;
     }
 

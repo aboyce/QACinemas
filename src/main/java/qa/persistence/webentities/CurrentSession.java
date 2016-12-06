@@ -16,7 +16,7 @@ public class CurrentSession implements Serializable {
         return user;
     }
 
-    public void setUser(User user) {
+    public void login(User user) {
         this.user = user;
     }
 
@@ -24,7 +24,8 @@ public class CurrentSession implements Serializable {
         return user != null;
     }
 
-    public void logout() {
+    public String logout() {
         this.user = null;
+        return Pages.INDEX;
     }
 }

@@ -16,6 +16,14 @@ public class UserRepositoryOffline implements UserRepository {
     private DatabaseOffline db;
 
     @Override
+    public boolean add(User user) {
+        if (user != null) {
+            return db.getUsers().add(user);
+        }
+        return false;
+    }
+
+    @Override
     public User getUserById(Integer id) {
         for (User user : db.getUsers()) {
             if(user.getId().equals(id)){

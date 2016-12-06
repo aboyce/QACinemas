@@ -11,10 +11,69 @@
 
     <ui:define name="main-content">
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <h:form id="register_form">
+                        <div class="form-group">
+                            <label for="register_forename">Forename:</label>
+                            <h:inputText id="register_forename" type="text" class="form-control"
+                                         value="#{account.registeredUser.user.forename}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="register_surname">Surname:</label>
+                            <h:inputText id="register_surname" type="text" class="form-control"
+                                         value="#{account.registeredUser.user.surname}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="register_username">Username:</label>
+                            <h:inputText id="register_username" type="text" class="form-control"
+                                         value="#{account.registeredUser.user.username}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="register_email">Email:</label>
+                            <h:inputText id="register_email" type="email" class="form-control"
+                                         value="#{account.registeredUser.user.email}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="register_dob">Date of Birth:</label> <!-- Datepicker works on input not InputText... -->
+                            <h:inputText id="register_dob" type="text" class="form-control"
+                                         value="#{account.registeredUser.userDateOfBirthString}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="register_password">Password:</label>
+                            <h:inputSecret id="register_password" type="secret" class="form-control"
+                                           value="#{account.registeredUser.user.passwordHash}"/>
+                        </div>
+                        <h:panelGroup class="text-danger" rendered="#{account.registeredUser.errorMessage != null}">
+                            <br/>
+                            <p>#{account.registeredUser.errorMessage}</p>
+                        </h:panelGroup>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h:commandButton type="submit" styleClass="btn btn-success" value="Register"
+                                                 action="#{account.register()}"/>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-danger" type="reset">Clear</button>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <p>Already have an account, you can log in <a href="login.xhtml">here</a>!</p>
+                </div>
+            </div>
+        </div>
 
     </ui:define>
 
     <ui:define name="custom-scripts">
+        <script type="text/javaScript" src="js/register.js"></script>
     </ui:define>
 
 </ui:composition>

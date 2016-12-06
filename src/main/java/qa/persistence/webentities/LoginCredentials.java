@@ -9,7 +9,6 @@ public class LoginCredentials {
     private String passwordHash = "";
     private String usernameError;
     private String passwordError;
-    private User user;
 
     /**
      * Create an empty LoginCredentials.
@@ -64,13 +63,5 @@ public class LoginCredentials {
 
     public void setUsernameError(String usernameError) {
         this.usernameError = usernameError;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }
