@@ -23,7 +23,7 @@ public class DatabaseOffline {
     @PostConstruct
     private void setupDatabase() {
         films = EntityGeneration.getSampleFilms();
-        ratings = EntityGeneration.getSampleRatings();
+        ratings = EntityGeneration.getSampleRatings(films);
         users = EntityGeneration.getSampleUsers();
         venues = EntityGeneration.getSampleVenues();
         viewings = EntityGeneration.getSampleViewings(new ArrayList<>(films), new ArrayList<>(venues));

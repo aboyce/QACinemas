@@ -1,18 +1,32 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <p class="p-single-line"><strong>#{film.title}</strong></p>
-    </div>
-    <div class="panel-body">
-        <div>
-            <img class="img-film img-rounded" src="#{film.imageUrl}"/>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <p class="p-single-line"><strong>#{film.title}</strong></p>
         </div>
-        <p class="p-single-line"><strong>Director:</strong></p>
-        <p class="p-single-line">#{film.director}</p>
-        <p class="p-single-line"><strong>Released:</strong> #{film.releaseYear}</p>
-        <p class="p-single-line"><strong>Duration:</strong> #{film.duration} mins</p>
+        <div class="panel-body">
+            <div>
+                <img class="img-film img-rounded" src="#{film.imageUrl}"/>
+            </div>
+            <p class="p-single-line"><strong>Director:</strong></p>
+            <p class="p-single-line">#{film.director}</p>
+            <p class="p-single-line"><strong>Released:</strong> #{film.releaseYear}</p>
+            <p class="p-single-line"><strong>Duration:</strong> #{film.duration} mins</p>
+        </div>
+        <div class="panel-footer">
+            <h:form>
+                <h:commandLink styleClass="btn btn-success">
+                    Book <i class="fa fa-ticket" aria-hidden="true"/>
+                </h:commandLink>
+            </h:form>
+            <h:form>
+                <h:commandLink styleClass="btn btn-warning">
+                    Add to Watchlist
+                </h:commandLink>
+            </h:form>
+        </div>
     </div>
-    <div class="panel-footer">
-        <button class="btn btn-success">Add to <i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
-        <button class="btn btn-warning">Add to Watchlist</button>
-    </div>
-</div>
+</ui:composition>

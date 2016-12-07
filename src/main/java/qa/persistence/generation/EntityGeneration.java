@@ -15,9 +15,9 @@ public class EntityGeneration {
         List<List<Seat>> seats = new ArrayList<List<Seat>>();
 
         for (int currentRow = 0; currentRow < seatRows; currentRow++) {
-            seats.set(currentRow, new ArrayList<Seat>());
+            seats.add(new ArrayList<Seat>());
             for (int currentNumber = 0; currentNumber < seatNumbers; currentNumber++) {
-                seats.get(currentRow).set(currentNumber, new Seat(null, currentRow, currentNumber, null));
+                seats.get(currentRow).add(new Seat(null, currentRow, currentNumber, null));
             }
         }
         return seats;

@@ -1,7 +1,12 @@
 package qa.persistence.webentities;
 
-/**
- * Created by Adam on 07/12/2016.
- */
+import qa.persistence.entities.Film;
+
+import java.util.Map;
+
+
 public class Basket {
+
+    private Map<Film, Integer> contents;
+
 }

@@ -71,7 +71,7 @@ public class RegisteredUser {
             error = true;
             errorMessage += " Please enter an email address.";
         }
-        user.setDateOfBirth(DateHelper.getDateOfBirth(userDateOfBirthString));
+        user.setDateOfBirth(DateHelper.getDateFromString(userDateOfBirthString));
         if (user.getDateOfBirth() == null || user.getDateOfBirth().before(new Date())) {
             error = true;
             errorMessage += " Please enter a date of birth, and check it is valid.";

@@ -27,11 +27,9 @@
             <div class="row">
                 <ui:repeat var="currentFilm" value="#{films.getFilms()}">
                     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                        <ui:insert>
-                            <ui:include src="templates/template_film.xhtml">
-                                <ui:param name="film" value="#{currentFilm}"/>
-                            </ui:include>
-                        </ui:insert>
+                        <ui:include src="templates/template_film.xhtml">
+                            <ui:param name="film" value="#{currentFilm}"/>
+                        </ui:include>
                     </div>
                 </ui:repeat>
             </div>
