@@ -2,22 +2,33 @@ package qa.persistence.generation;
 
 import qa.Helpers.DateHelper;
 import qa.persistence.entities.*;
+import qa.persistence.repositories.UserRepository;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class EntityGeneration {
 
+    private static List<List<Seat>> getSampleSeats(int seatRows, int seatNumbers) {
+        List<List<Seat>> seats = new ArrayList<List<Seat>>();
+
+        for (int currentRow = 0; currentRow < seatRows; currentRow++) {
+            seats.set(currentRow, new ArrayList<Seat>());
+            for (int currentNumber = 0; currentNumber < seatNumbers; currentNumber++) {
+                seats.get(currentRow).set(currentNumber, new Seat(null, currentRow, currentNumber, null));
+            }
+        }
+        return seats;
+    }
+
     public static List<User> getSampleUsers() {
         List<User> users = new ArrayList<User>();
-        users.add(new User(0, "Admin", "Test", "admin", "test", "a.test@email.com", DateHelper.getDateOfBirth("01/01/2000")));
-        users.add(new User(1, "Terry", "Grange", "terry_grange", "test", "t.grange@email.com", DateHelper.getDateOfBirth("25/11/1969")));
-        users.add(new User(2, "Fran", "Levels", "fran_levels", "test", "f.levels@email.com", DateHelper.getDateOfBirth("13/04/1973")));
-        users.add(new User(3, "John", "Smith", "john_smith", "test", "j.smith@email.com", DateHelper.getDateOfBirth("05/08/1964")));
+        users.add(new User(0, "Admin", "Test", "admin", "test", "a.test@email.com", DateHelper.getDateFromString("01/01/2000")));
+        users.add(new User(1, "Terry", "Grange", "terry_grange", "test", "t.grange@email.com", DateHelper.getDateFromString("25/11/1969")));
+        users.add(new User(2, "Fran", "Levels", "fran_levels", "test", "f.levels@email.com", DateHelper.getDateFromString("13/04/1973")));
+        users.add(new User(3, "John", "Smith", "john_smith", "test", "j.smith@email.com", DateHelper.getDateFromString("05/08/1964")));
         return users;
     }
 
@@ -41,18 +52,48 @@ public class EntityGeneration {
         return films;
     }
 
-    public static List<Rating> getSampleRatings() {
+    public static List<Rating> getSampleRatings(List<Film> films) {
+        int idCounter = 0;
+        User ratingProvider = new User(null, "Anon", "Smith", "dave", "test", "dave@email.com", DateHelper.getDateFromString("16/05/1968"));
         List<Rating> ratings = new ArrayList<Rating>();
+        for (Film film : films) {
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 3, "Giant expectations may lead to tiny disappointments in this two-hander that's slow in parts. But it still offers magic and visual delights, and the final act is a treat.", DateHelper.getDateFromString("24/11/16")));
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 4, "Too hard to follow, but brain-numbing fun makes it a slightly memorable experience.", DateHelper.getDateFromString("26/11/16")));
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 5, "A supremely well-crafted film.", DateHelper.getDateFromString("15/11/16")));
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 5, "It's visually resourceful and honest in how it sets up and delivers on it's story.", DateHelper.getDateFromString("5/12/16")));
+        }
         return ratings;
     }
 
-    public static List<Viewing> getSampleViewings() {
+    public static List<Viewing> getSampleViewings(List<Film> films, List<Venue> venues) {
+
+        ThreadLocalRandom random = ThreadLocalRandom.current();
         List<Viewing> viewings = new ArrayList<Viewing>();
+        viewings.add(new Viewing(0, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("12/01/17")));
+        viewings.add(new Viewing(1, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("13/01/17")));
+        viewings.add(new Viewing(2, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("14/01/17")));
+        viewings.add(new Viewing(3, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("15/01/17")));
+        viewings.add(new Viewing(4, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("16/01/17")));
+        viewings.add(new Viewing(5, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("16/01/17")));
+        viewings.add(new Viewing(6, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("16/01/17")));
+        viewings.add(new Viewing(7, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("17/01/17")));
+        viewings.add(new Viewing(8, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("18/01/17")));
+        viewings.add(new Viewing(9, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("19/01/17")));
+        viewings.add(new Viewing(10, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("20/01/17")));
+        viewings.add(new Viewing(11, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("20/01/17")));
+        viewings.add(new Viewing(12, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("20/01/17")));
+        viewings.add(new Viewing(13, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("22/01/17")));
+        viewings.add(new Viewing(14, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("23/01/17")));
+        viewings.add(new Viewing(15, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("25/01/17")));
         return viewings;
     }
 
-    public static List<Seat> getSampleSeats() {
-        List<Seat> seats = new ArrayList<Seat>();
-        return seats;
+    public static List<Venue> getSampleVenues() {
+        List<Venue> venues = new ArrayList<Venue>();
+        venues.add(new Venue(0, "Screen 1", "ODEON, Manchester", 10, 15, getSampleSeats(10, 15)));
+        venues.add(new Venue(1, "Screen 2", "ODEON, Manchester", 10, 15, getSampleSeats(10, 15)));
+        venues.add(new Venue(2, "Screen 3", "ODEON, Manchester", 10, 15, getSampleSeats(10, 15)));
+        venues.add(new Venue(3, "Main Screen", "VUE, Lincoln", 10, 15, getSampleSeats(10, 15)));
+        return venues;
     }
 }

@@ -4,11 +4,11 @@ package qa.persistence.entities;
 public class Seat {
 
     private Integer id;
+    private int seatRow;
     private int seatNumber;
-    private char seatRow;
     private User bookedUser;
 
-    public Seat(Integer id, int seatNumber, char seatRow, User bookedUser) {
+    public Seat(Integer id, int seatRow, int seatNumber, User bookedUser) {
         this.id = id;
         this.seatNumber = seatNumber;
         this.seatRow = seatRow;
@@ -19,12 +19,12 @@ public class Seat {
         return id;
     }
 
-    public int getSeatNumber() {
-        return seatNumber;
+    public int getSeatRow() {
+        return seatRow;
     }
 
-    public char getSeatRow() {
-        return seatRow;
+    public int getSeatNumber() {
+        return seatNumber;
     }
 
     public User getBookedUser() {

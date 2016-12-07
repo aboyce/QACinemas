@@ -5,6 +5,7 @@ import qa.persistence.generation.EntityGeneration;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,23 +14,19 @@ import java.util.List;
 @Singleton
 public class DatabaseOffline {
 
-    private List<User> users;
     private List<Film> films;
     private List<Rating> ratings;
+    private List<User> users;
+    private List<Venue> venues;
     private List<Viewing> viewings;
-    private List<Seat> seats;
 
     @PostConstruct
     private void setupDatabase() {
-        users = EntityGeneration.getSampleUsers();
         films = EntityGeneration.getSampleFilms();
         ratings = EntityGeneration.getSampleRatings();
-        viewings = EntityGeneration.getSampleViewings();
-        seats = EntityGeneration.getSampleSeats();
-    }
-
-    public List<User> getUsers() {
-        return users;
+        users = EntityGeneration.getSampleUsers();
+        venues = EntityGeneration.getSampleVenues();
+        viewings = EntityGeneration.getSampleViewings(new ArrayList<>(films), new ArrayList<>(venues));
     }
 
     public List<Film> getFilms() {
@@ -40,11 +37,15 @@ public class DatabaseOffline {
         return ratings;
     }
 
-    public List<Viewing> getViewings() {
-        return viewings;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+    public List<Venue> getVenues() {
+        return venues;
+    }
+
+    public List<Viewing> getViewings() {
+        return viewings;
     }
 }

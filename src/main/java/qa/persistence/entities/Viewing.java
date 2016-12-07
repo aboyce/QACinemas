@@ -7,16 +7,16 @@ public class Viewing {
 
     private Integer id;
     private Film film;
+    private Venue venue;
     private Date date;
-    private List<Seat> seats;
 
     public Viewing() {}
 
-    public Viewing(Integer id, Film film, Date date, List<Seat> seats) {
+    public Viewing(Integer id, Film film, Venue venue, Date date) {
         this.id = id;
         this.film = film;
+        this.venue = venue;
         this.date = date;
-        this.seats = seats;
     }
 
     public Integer getId() {
@@ -27,11 +27,11 @@ public class Viewing {
         return film;
     }
 
-    public Date getDate() {
-        return date;
+    public Venue getVenue() {
+        return venue;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+    public Date getDate() {
+        return date;
     }
 }
