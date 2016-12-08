@@ -1,0 +1,29 @@
+.main-banner-img {
+    width: 80%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.slider {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 60%;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #005bab;
+}
+
+.slider-basket-button {
+    text-align: center;
+}

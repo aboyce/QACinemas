@@ -18,12 +18,12 @@
         </div>
         <div class="panel-footer">
             <h:form>
-                <h:commandLink styleClass="btn btn-success">
+                <h:commandLink styleClass="btn btn-success" action="#{booking.bookFilm(film)}">
                     Book <i class="fa fa-ticket" aria-hidden="true"/>
                 </h:commandLink>
             </h:form>
             <h:form>
-                <h:commandLink styleClass="btn btn-warning">
+                <h:commandLink styleClass="btn btn-warning" disabled="true">
                     Add to Watchlist
                 </h:commandLink>
             </h:form>

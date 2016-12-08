@@ -54,12 +54,16 @@ public class EntityGeneration {
 
     public static List<Rating> getSampleRatings(List<Film> films) {
         int idCounter = 0;
-        User ratingProvider = new User(null, "Anon", "Smith", "dave", "test", "dave@email.com", DateHelper.getDateFromString("16/05/1968"));
+        User ratingProvider = new User(null, "Susan", "Smith", "dave", "test", "dave@email.com", DateHelper.getDateFromString("16/05/1968"));
         List<Rating> ratings = new ArrayList<Rating>();
         for (Film film : films) {
             ratings.add(new Rating(idCounter++, film, ratingProvider, 3, "Giant expectations may lead to tiny disappointments in this two-hander that's slow in parts. But it still offers magic and visual delights, and the final act is a treat.", DateHelper.getDateFromString("24/11/16")));
             ratings.add(new Rating(idCounter++, film, ratingProvider, 4, "Too hard to follow, but brain-numbing fun makes it a slightly memorable experience.", DateHelper.getDateFromString("26/11/16")));
             ratings.add(new Rating(idCounter++, film, ratingProvider, 5, "A supremely well-crafted film.", DateHelper.getDateFromString("15/11/16")));
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 5, "It's visually resourceful and honest in how it sets up and delivers on it's story.", DateHelper.getDateFromString("5/12/16")));
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 1, "How do I go about a refund?", DateHelper.getDateFromString("24/11/16")));
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 4, "Too hard to follow, but brain-numbing fun makes it a slightly memorable experience.", DateHelper.getDateFromString("26/11/16")));
+            ratings.add(new Rating(idCounter++, film, ratingProvider, 2, "So disappointed, but was 2-for-1.", DateHelper.getDateFromString("15/11/16")));
             ratings.add(new Rating(idCounter++, film, ratingProvider, 5, "It's visually resourceful and honest in how it sets up and delivers on it's story.", DateHelper.getDateFromString("5/12/16")));
         }
         return ratings;

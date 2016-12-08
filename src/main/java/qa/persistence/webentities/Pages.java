@@ -25,4 +25,9 @@ public class Pages {
      * The login page.
      */
     public static final String LOGIN = "login";
+
+    /**
+     * The booking page.
+     */
+    public static final String BOOKING = "booking";
 }
