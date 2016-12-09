@@ -14,7 +14,7 @@ public class VenueService {
     @Inject
     private VenueRepository venueRepository;
 
-    public List<Venue> getVenuessForFilm(Film film) {
+    public List<Venue> getVenuesForFilm(Film film) {
         return venueRepository.getVenuesForFilm(film);
     }
 }

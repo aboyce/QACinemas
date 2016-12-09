@@ -4,9 +4,9 @@ import qa.persistence.entities.Film;
 import qa.persistence.entities.Rating;
 import qa.persistence.entities.Venue;
 import qa.persistence.entities.Viewing;
-import qa.persistence.repositories.VenueRepository;
 import qa.services.FilmService;
 import qa.services.RatingService;
+import qa.services.VenueService;
 import qa.services.ViewingService;
 
 import javax.enterprise.context.RequestScoped;
@@ -20,15 +20,12 @@ public class FilmController {
 
     @Inject
     private FilmService filmService;
-
     @Inject
     private RatingService ratingService;
-
     @Inject
     private ViewingService viewingService;
-
     @Inject
-    private VenueRepository venueRepository;
+    private VenueService venueService;
 
     public List<Film> getFilms() {
         return filmService.getFilms();
@@ -56,6 +53,6 @@ public class FilmController {
             return null;
         }
 
-        return venueRepository.getVenuesForFilm(film);
+        return venueService.getVenuesForFilm(film);
     }
 }
