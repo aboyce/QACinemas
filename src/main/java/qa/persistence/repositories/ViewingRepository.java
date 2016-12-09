@@ -1,6 +1,7 @@
 package qa.persistence.repositories;
 
 import qa.persistence.entities.Film;
+import qa.persistence.entities.Venue;
 import qa.persistence.entities.Viewing;
 
 import java.util.List;
@@ -16,9 +17,10 @@ public interface ViewingRepository {
     public Viewing getViewingById(Integer id);
 
     /**
-     * Get all Viewings for a Film.
-     *
-     * @return a list of all Viewings for the matching Film.
+     * Gets all Viewings for a Film and Venue.
+     * @param film the Film to match the Viewings for.
+     * @param venue the Venue to match the Viewings for.
+     * @return a list of all Viewings for the matching Film and Venue.
      */
-    public List<Viewing> getViewingsForFilm(Film film);
+    public List<Viewing> getViewingsForFilmAndVenue(Film film, Venue venue);
 }

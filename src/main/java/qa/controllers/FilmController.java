@@ -40,11 +40,11 @@ public class FilmController {
         return ratingService.getRatingsForFilm(film);
     }
 
-    public List<Viewing> getViewingsForFilm(Film film) {
+    public List<Viewing> getViewingsForFilmAndVenue(Film film, Venue venue) {
         if (film == null) {
             return null;
         }
 
-        return viewingService.getViewingsForFilm(film);
+        return viewingService.getViewingsForFilmAndVenue(film, venue);
     }
 }

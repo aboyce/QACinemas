@@ -88,6 +88,7 @@ public class EntityGeneration {
         viewings.add(new Viewing(13, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("22/01/17")));
         viewings.add(new Viewing(14, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("23/01/17")));
         viewings.add(new Viewing(15, films.get(random.nextInt(0, films.size())), venues.get(random.nextInt(0, venues.size())), DateHelper.getDateFromString("25/01/17")));
+
         return viewings;
     }
 
