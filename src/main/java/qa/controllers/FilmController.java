@@ -2,7 +2,9 @@ package qa.controllers;
 
 import qa.persistence.entities.Film;
 import qa.persistence.entities.Rating;
+import qa.persistence.entities.Venue;
 import qa.persistence.entities.Viewing;
+import qa.persistence.repositories.VenueRepository;
 import qa.services.FilmService;
 import qa.services.RatingService;
 import qa.services.ViewingService;
@@ -25,6 +27,9 @@ public class FilmController {
     @Inject
     private ViewingService viewingService;
 
+    @Inject
+    private VenueRepository venueRepository;
+
     public List<Film> getFilms() {
         return filmService.getFilms();
     }
@@ -44,5 +49,13 @@ public class FilmController {
         }
 
         return viewingService.getViewingsForFilm(film);
+    }
+
+    public List<Venue> getVenuesForFilm(Film film) {
+        if (film == null) {
+            return null;
+        }
+
+        return venueRepository.getVenuesForFilm(film);
     }
 }
