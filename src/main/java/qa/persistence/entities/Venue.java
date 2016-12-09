@@ -43,4 +43,9 @@ public class Venue {
     public List<List<Seat>> getSeats() {
         return seats;
     }
+
+    @Override
+    public String toString() {
+        return "" + this.name + " at " + this.location;
+    }
 }

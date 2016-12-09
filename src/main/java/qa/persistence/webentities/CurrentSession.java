@@ -2,6 +2,7 @@ package qa.persistence.webentities;
 
 import qa.persistence.entities.Film;
 import qa.persistence.entities.User;
+import qa.persistence.entities.Venue;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -46,5 +47,21 @@ public class CurrentSession implements Serializable {
 
     public void setSelectedFilm(Film selectedFilm) {
         this.selectedFilm = selectedFilm;
+    }
+
+    /* -- SELECTED VENUE -- */
+
+    private Venue selectedVenue;
+
+    public boolean isVenueSelected() {
+        return selectedVenue != null;
+    }
+
+    public Venue getSelectedVenue() {
+        return selectedVenue;
+    }
+
+    public void setSelectedVenue(Venue selectedVenue) {
+        this.selectedVenue = selectedVenue;
     }
 }

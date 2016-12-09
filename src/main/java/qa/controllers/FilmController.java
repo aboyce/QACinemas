@@ -47,12 +47,4 @@ public class FilmController {
 
         return viewingService.getViewingsForFilm(film);
     }
-
-    public List<Venue> getVenuesForFilm(Film film) {
-        if (film == null) {
-            return null;
-        }
-
-        return venueService.getVenuesForFilm(film);
-    }
 }

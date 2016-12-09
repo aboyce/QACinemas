@@ -1,6 +1,5 @@
 package qa.persistence.repositories;
 
-import qa.persistence.entities.Film;
 import qa.persistence.entities.Venue;
 
 import java.util.List;
@@ -16,9 +15,7 @@ public interface VenueRepository {
     public Venue getVenueById(Integer id);
 
     /**
-     * Get all Venues for a Film.
-     *
-     * @return a list of all Venues for the matching Film.
+     * Get all Venues.
      */
-    public List<Venue> getVenuesForFilm(Film film);
+    public List<Venue> getVenues();
 }

@@ -20,7 +20,7 @@ public class ViewingRepositoryOffline implements ViewingRepository {
     @Override
     public Viewing getViewingById(Integer id) {
         for (Viewing viewing : db.getViewings()) {
-            if (viewing.getId().equals(id)) {
+            if (viewing.getFilm().getId().equals(id)) {
                 return viewing;
             }
         }
@@ -31,7 +31,7 @@ public class ViewingRepositoryOffline implements ViewingRepository {
     public List<Viewing> getViewingsForFilm(Film film) {
         List<Viewing> viewings = new ArrayList<Viewing>();
         for (Viewing viewing : db.getViewings()) {
-            if (viewing.getId().equals(film.getId())) {
+            if (viewing.getFilm().getId().equals(film.getId())) {
                 viewings.add(viewing);
             }
         }

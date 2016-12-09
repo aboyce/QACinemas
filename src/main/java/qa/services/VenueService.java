@@ -1,6 +1,5 @@
 package qa.services;
 
-import qa.persistence.entities.Film;
 import qa.persistence.entities.Venue;
 import qa.persistence.repositories.VenueRepository;
 
@@ -14,7 +13,7 @@ public class VenueService {
     @Inject
     private VenueRepository venueRepository;
 
-    public List<Venue> getVenuesForFilm(Film film) {
-        return venueRepository.getVenuesForFilm(film);
+    public List<Venue> getVenues() {
+        return venueRepository.getVenues();
     }
 }
