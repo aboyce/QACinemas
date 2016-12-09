@@ -1,7 +1,5 @@
 package qa.persistence.webentities;
 
-import qa.persistence.entities.User;
-
 public class LoginCredentials {
 
     private String username = "";
@@ -13,10 +11,12 @@ public class LoginCredentials {
     /**
      * Create an empty LoginCredentials.
      */
-    public LoginCredentials() { }
+    public LoginCredentials() {
+    }
 
     /**
      * Create LoginCredentials with error messages.
+     *
      * @param usernameError the error for the Username.
      * @param passwordError the error for the Password.
      */

@@ -9,6 +9,7 @@ public interface RatingRepository {
 
     /**
      * Gets a Rating that matches its Id.
+     *
      * @param id the Id of the Rating to retrieve.
      * @return the matching Rating, or null if no match is found.
      */
@@ -16,6 +17,7 @@ public interface RatingRepository {
 
     /**
      * Get all Ratings for a Film.
+     *
      * @return a list of all Ratings for the matching Film.
      */
     public List<Rating> getRatingsForFilm(Film film);

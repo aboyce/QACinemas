@@ -50,7 +50,7 @@ public class AccountController implements Serializable {
     }
 
     public String register() {
-        if(registeredUser == null) {
+        if (registeredUser == null) {
             registeredUser = new RegisteredUser(); // This shouldn't happen.
             return Pages.REGISTER; // Send them to register to reload the page.
         }
@@ -75,7 +75,7 @@ public class AccountController implements Serializable {
         }
 
         User user = userService.login(credentials);
-        if(user == null) {
+        if (user == null) {
             return Pages.CURRENT; // Return to the login page.
         }
 

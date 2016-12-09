@@ -1,22 +1,24 @@
 package qa.persistence.repositories;
 
 import qa.persistence.entities.Film;
-import qa.persistence.entities.Rating;
+import qa.persistence.entities.Viewing;
 
 import java.util.List;
 
-public interface RatingRepository {
+public interface ViewingRepository {
 
     /**
-     * Gets a Rating that matches its Id.
-     * @param id the Id of the Rating to retrieve.
-     * @return the matching Rating, or null if no match is found.
+     * Gets a Viewing that matches its Id.
+     *
+     * @param id the Id of the Viewing to retrieve.
+     * @return the matching Viewing, or null if no match is found.
      */
-    public Rating getRatingById(Integer id);
+    public Viewing getViewingById(Integer id);
 
     /**
-     * Get all Ratings for a Film.
-     * @return a list of all Ratings for the matching Film.
+     * Get all Viewings for a Film.
+     *
+     * @return a list of all Viewings for the matching Film.
      */
-    public List<Rating> getRatingsForFilm(Film film);
+    public List<Viewing> getViewingsForFilm(Film film);
 }

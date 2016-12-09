@@ -21,7 +21,7 @@ public class RatingRepositoryOffline implements RatingRepository {
     @Override
     public Rating getRatingById(Integer id) {
         for (Rating rating : db.getRatings()) {
-            if(rating.getId().equals(id)){
+            if (rating.getId().equals(id)) {
                 return rating;
             }
         }
@@ -32,7 +32,7 @@ public class RatingRepositoryOffline implements RatingRepository {
     public List<Rating> getRatingsForFilm(Film film) {
         List<Rating> ratings = new ArrayList<Rating>();
         for (Rating rating : db.getRatings()) {
-            if(rating.getFilm().getId().equals(film.getId())){
+            if (rating.getFilm().getId().equals(film.getId())) {
                 ratings.add(rating);
             }
         }

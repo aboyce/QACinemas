@@ -11,7 +11,8 @@ public class Film {
     private int duration;
     private Year releaseYear;
 
-    public Film() {}
+    public Film() {
+    }
 
     public Film(Integer id, String title, String director, String imageUrl, int duration, Year releaseYear) {
         this.id = id;

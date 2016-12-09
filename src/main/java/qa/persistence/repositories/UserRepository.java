@@ -8,6 +8,7 @@ public interface UserRepository {
 
     /**
      * Persist a User.
+     *
      * @param user the User to persist.
      * @return the result of adding the User.
      */
@@ -15,6 +16,7 @@ public interface UserRepository {
 
     /**
      * Retrieve a User from storage by it'd Id.
+     *
      * @param id the Id to match to the User.
      * @return the retrieved User, or null if not successful.
      */
@@ -22,6 +24,7 @@ public interface UserRepository {
 
     /**
      * Retrieve all Users from storage.
+     *
      * @return the List of Users retrieved.
      */
     List<User> getUsers();
@@ -30,7 +33,8 @@ public interface UserRepository {
 
     /**
      * Will attempt to identify a User by the Username and Password Hash, and retrieve the User.
-     * @param username the Username to compare.
+     *
+     * @param username     the Username to compare.
      * @param passwordHash the Password to compare.
      * @return the matching User. or null if not successful.
      */

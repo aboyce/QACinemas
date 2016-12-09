@@ -11,7 +11,8 @@ public class Rating {
     private String description;
     private Date date;
 
-    public Rating () {}
+    public Rating() {
+    }
 
     public Rating(Integer id, Film film, User user, int rating, String description, Date date) {
         this.id = id;

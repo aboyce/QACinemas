@@ -1,7 +1,6 @@
 package qa.persistence.entities;
 
 import java.util.Date;
-import java.util.List;
 
 public class Viewing {
 
@@ -10,7 +9,8 @@ public class Viewing {
     private Venue venue;
     private Date date;
 
-    public Viewing() {}
+    public Viewing() {
+    }
 
     public Viewing(Integer id, Film film, Venue venue, Date date) {
         this.id = id;

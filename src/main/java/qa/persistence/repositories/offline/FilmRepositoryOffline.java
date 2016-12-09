@@ -19,7 +19,7 @@ public class FilmRepositoryOffline implements FilmRepository {
     @Override
     public Film getFilmById(Integer id) {
         for (Film film : db.getFilms()) {
-            if(film.getId().equals(id)){
+            if (film.getId().equals(id)) {
                 return film;
             }
         }

@@ -43,6 +43,7 @@ public class RegisteredUser {
 
     /**
      * Will check that the User has been populated, and update the errorMessage message.
+     *
      * @return if the User has been populated or not.
      */
     public boolean isUserValid() {
@@ -81,7 +82,7 @@ public class RegisteredUser {
             errorMessage += " Please enter a password.";
         }
 
-        if (error){
+        if (error) {
             return false; // The User is not valid.
         }
 

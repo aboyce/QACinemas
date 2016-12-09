@@ -2,7 +2,6 @@ package qa.persistence.generation;
 
 import qa.Helpers.DateHelper;
 import qa.persistence.entities.*;
-import qa.persistence.repositories.UserRepository;
 
 import java.time.Year;
 import java.util.ArrayList;

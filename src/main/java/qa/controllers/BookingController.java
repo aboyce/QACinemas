@@ -3,12 +3,10 @@ package qa.controllers;
 import qa.persistence.entities.Film;
 import qa.persistence.webentities.CurrentSession;
 import qa.persistence.webentities.Pages;
-import qa.services.FilmService;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.List;
 
 @Named("booking")
 @RequestScoped

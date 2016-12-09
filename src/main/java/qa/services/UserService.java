@@ -50,7 +50,7 @@ public class UserService {
 
     public User register(User user) {
 
-        if(user == null){
+        if (user == null) {
             return null;
         }
 
@@ -58,7 +58,7 @@ public class UserService {
         return user;
     }
 
-    public boolean add(User user){
+    public boolean add(User user) {
         return false;
     }
 }

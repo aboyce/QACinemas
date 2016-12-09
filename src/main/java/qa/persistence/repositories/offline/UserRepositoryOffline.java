@@ -26,7 +26,7 @@ public class UserRepositoryOffline implements UserRepository {
     @Override
     public User getUserById(Integer id) {
         for (User user : db.getUsers()) {
-            if(user.getId().equals(id)){
+            if (user.getId().equals(id)) {
                 return user;
             }
         }
@@ -41,7 +41,7 @@ public class UserRepositoryOffline implements UserRepository {
     @Override
     public User login(String username, String passwordHash) {
         for (User user : db.getUsers()) {
-            if(user.getUsername().equals(username) && user.getPasswordHash().equals(passwordHash)){
+            if (user.getUsername().equals(username) && user.getPasswordHash().equals(passwordHash)) {
                 return user;
             }
         }
